@@ -1,0 +1,42 @@
+{
+  "name": "spw-miniapp",
+  "version": "1.0.0",
+  "description": "SPWorlds Miniapp creation toolkit",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "format": "prettier -w ."
+  },
+  "files": [
+    "/dist/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sp-worlds/spw-miniapp.git"
+  },
+  "keywords": [
+    "SPWorlds",
+    "SPWorlds",
+    "API",
+    "spworlds",
+    "spw-miniapp",
+    "SPWMiniapp",
+    "SPW"
+  ],
+  "author": {
+    "name": "SuhEugene",
+    "url": "https://suheugene.ru"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sp-worlds/spw-miniapp/issues"
+  },
+  "homepage": "https://spworlds.ru",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
+  }
+}
