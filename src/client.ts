@@ -63,10 +63,8 @@ export class SPMini extends Emitter<MessageFromServer> {
         ...init,
         body: JSON.stringify(this.user)
       })
-        .then(r => {
-          console.log(r.body, String(r.body));
-          if (r.status === 200) return resolve(String(r.body) === '0');
-        })
+        .then(r => r.text())
+        .then(v => resolve(v === '1'))
         .catch(reject);
     });
   }
