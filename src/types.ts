@@ -12,6 +12,7 @@ export type PayloadRequests = Omit<Requests, keyof EmptyRequests>;
 export type Responses = {
   init: UserData;
   openURL: 'success';
+  paymentOpen: 'success';
   payment: 'success';
 };
 
@@ -25,7 +26,6 @@ type ErrorResponses = {
 
 type PlainResponses = {
   ready: never;
-  paymentEnd: never;
 }
 
 export type MessageFromServer = SuccessResponses & ErrorResponses & PlainResponses;
