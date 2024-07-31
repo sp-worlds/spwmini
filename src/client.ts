@@ -74,17 +74,19 @@ export class SPMini extends Emitter<MessageFromServer> {
   }
 
   openURL(url: string) {
-    return new Promise<void>((resolve, reject) => {
-      let parsedUrl;
-      try {
-        parsedUrl = new URL(url);
-      } catch (e) {
-        return reject('Невалидный URL');
-      }
-      if (parsedUrl.protocol !== 'https:') return reject('Неверный протокол');
+    let parsedUrl;
+    try {
+      parsedUrl = new URL(url);
+    } catch (e) {
+      throw 'Невалидный URL';
+    }
+    if (parsedUrl.protocol !== 'https:') throw 'Неверный протокол';
 
-      this.#send('openURL', url);
-      resolve();
-    });
+    this.#send('openURL', url);
+  }
+
+  openPayment(code: string) {
+    if (!code) throw 'Не указан код';
+    this.#send('payment', code);
   }
 }

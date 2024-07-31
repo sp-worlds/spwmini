@@ -1,6 +1,7 @@
 export type Requests = {
   init: string;
   openURL: string;
+  payment: string;
 };
 
 export type EmptyRequests = {
@@ -11,6 +12,7 @@ export type PayloadRequests = Omit<Requests, keyof EmptyRequests>;
 export type Responses = {
   init: UserData;
   openURL: 'success';
+  payment: 'success';
 };
 
 type SuccessResponses = {
