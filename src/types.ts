@@ -1,6 +1,5 @@
 export type Requests = {
-  init: undefined;
-  getUser: undefined;
+  init: string;
   openURL: string;
 };
 
@@ -11,6 +10,7 @@ export type PayloadRequests = Omit<Requests, keyof EmptyRequests>;
 
 export type Responses = {
   init: UserData;
+  openURL: 'success';
 };
 
 type SuccessResponses = {
@@ -34,10 +34,10 @@ export interface UserData extends User {
 }
 
 type DoMessageData<T> = {
-  [K in keyof T]: { type: K; };
+  [K in keyof T]: { type: K };
 }[keyof T];
 type DoMessageLoadedData<T> = {
   [K in keyof T]: { type: K; payload: T[K] };
 }[keyof T];
 
-export type RequestMessage = DoMessageData<EmptyRequests> | DoMessageLoadedData<PayloadRequests>
+export type RequestMessage = DoMessageData<EmptyRequests> | DoMessageLoadedData<PayloadRequests>;

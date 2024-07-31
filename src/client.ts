@@ -1,14 +1,17 @@
-import {Emitter, EventsMap} from './emitter';
+import { Emitter, EventsMap } from './emitter';
 import type { UserData, EmptyRequests, PayloadRequests, MessageFromServer } from './types';
-
-const urlsThatHavePayload = ['openURL'];
 
 type RequestUrl = Parameters<typeof fetch>[0];
 type RequestOptions = Parameters<typeof fetch>[1];
+
+interface AppOptions {
+  autoinit: boolean;
+}
 export class SPMini extends Emitter<MessageFromServer> {
+  appId: string;
   isReady: boolean = false;
   user: UserData | null = null;
-  fetch = fetch;
+  customFetch: typeof fetch | null = null;
 
   #send<T extends keyof PayloadRequests>(type: T, payload: PayloadRequests[T]): void;
   #send<T extends keyof EmptyRequests>(type: T): void;
@@ -22,20 +25,17 @@ export class SPMini extends Emitter<MessageFromServer> {
 
   #handleMessage({ data }: { data: any }) {
     if (!data || typeof data !== 'object') return;
-
     if (!data.type) return;
-    if (urlsThatHavePayload.includes(data.type)) {
-      if (data.payload === undefined) return;
-      this.emit(data.type, data.payload);
-      return;
-    }
-
-    this.emit(data.type, null);
+    this.emit(data.type, data.payload);
   }
 
-  constructor(autoinit = true) {
+  constructor(appId: string, options?: AppOptions) {
     super();
-    if (autoinit) this.initialize();
+    this.appId = appId;
+
+    // autoinit can be undefined - true
+    const doAutoInit = !options || options.autoinit !== false;
+    if (doAutoInit) this.initialize();
 
     this.once('initResponse', user => {
       this.isReady = true;
@@ -46,10 +46,10 @@ export class SPMini extends Emitter<MessageFromServer> {
 
   initialize() {
     window.addEventListener('message', this.#handleMessage.bind(this));
-    this.#send('init');
+    this.#send('init', this.appId);
   }
 
-  validate(url: RequestUrl, init: RequestOptions = {}) {
+  validateUser(url: RequestUrl, init: RequestOptions = {}) {
     return new Promise<boolean>((resolve, reject) => {
       if (!init.method) init.method = 'POST';
       if (!init.headers) init.headers = {};
@@ -57,7 +57,9 @@ export class SPMini extends Emitter<MessageFromServer> {
       // @ts-expect-error
       init.headers['Content-Type'] = 'application/json';
 
-      this.fetch(url, {
+      const fetchFunction = this.customFetch || window.fetch;
+
+      fetchFunction(url, {
         ...init,
         body: JSON.stringify(this.user)
       })
