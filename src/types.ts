@@ -13,7 +13,7 @@ export type Responses = {
   init: UserData;
   openURL: 'success';
   paymentOpen: 'success';
-  payment: 'success';
+  payment: 'success' | 'cancel';
 };
 
 type SuccessResponses = {
