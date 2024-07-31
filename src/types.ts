@@ -23,7 +23,12 @@ type ErrorResponses = {
   [K in keyof Responses as `${K}Error`]: string;
 };
 
-export type MessageFromServer = SuccessResponses & ErrorResponses & { ready: never };
+type PlainResponses = {
+  ready: never;
+  paymentEnd: never;
+}
+
+export type MessageFromServer = SuccessResponses & ErrorResponses & PlainResponses;
 
 export interface User {
   id: string;
