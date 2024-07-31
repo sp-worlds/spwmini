@@ -1,14 +1,20 @@
 {
   "include": ["src"],
+  "exclude": ["src/emitter"],
   "compilerOptions": {
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "target": "es2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",
+    "rootDir": "src",
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
+    "sourceMap": true,
     "skipLibCheck": true,
     "allowJs": true,
     "resolveJsonModule": true,
     "strict": true,
+    "strictNullChecks": true,
     "noUncheckedIndexedAccess": true
   }
 }
