@@ -7,7 +7,7 @@ type RequestOptions = Parameters<typeof fetch>[1];
 interface AppOptions {
   autoinit: boolean;
 }
-export class SPMini extends Emitter<MessageFromServer> {
+export default class SPMini extends Emitter<MessageFromServer> {
   appId: string;
   isReady: boolean = false;
   user: UserData | null = null;
