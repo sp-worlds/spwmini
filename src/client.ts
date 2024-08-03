@@ -5,7 +5,8 @@ type RequestUrl = Parameters<typeof fetch>[0];
 type RequestOptions = Parameters<typeof fetch>[1];
 
 interface AppOptions {
-  autoinit: boolean;
+  customFetch?: typeof fetch;
+  autoinit?: boolean;
 }
 export default class SPMini extends Emitter<MessageFromServer> {
   appId: string;
@@ -32,6 +33,9 @@ export default class SPMini extends Emitter<MessageFromServer> {
   constructor(appId: string, options?: AppOptions) {
     super();
     this.appId = appId;
+
+    if (options?.customFetch)
+      this.customFetch = options.customFetch;
 
     // autoinit can be undefined - true
     const doAutoInit = !options || options.autoinit !== false;
