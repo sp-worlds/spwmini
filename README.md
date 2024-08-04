@@ -176,7 +176,7 @@ spm.on('paymentOpenError', err => console.error(`Оплатить не удал�
 
 ### Действительно middleware
 
-Функция `spmValidate` принимает как обязательный аргумент токен приложения и как опциональный - настройки. Возвращает она другую функцию, уже используемую как посредник.
+Функция `spwmValidate` принимает как обязательный аргумент токен приложения и как опциональный - настройки. Возвращает она другую функцию, уже используемую как посредник.
 
 Возвращаемая функция-посредник принимает http2 запрос и http2 ответ аргументами, а потому может быть встроена посредником как в http2 сервер, так в express.js сервер и иные.
 
@@ -186,10 +186,10 @@ spm.on('paymentOpenError', err => console.error(`Оплатить не удал�
 
 ```ts
 import express from 'express';
-import { spmValidate } from 'spwmini/middleware';
+import { validate } from 'spwmini/middleware';
 
 const app = express();
-app.use('/validate', spmValidate('SECRET_TOKEN'));
+app.use('/validate', validate('SECRET_TOKEN'));
 app.use(express.json());
 ```
 
@@ -199,13 +199,13 @@ app.use(express.json());
 
 ```ts
 // Принимает совершенно любые методы
-app.use('/validate', spmValidate('SECRET_TOKEN', { checkPostMethod: false }));
+app.use('/validate', validate('SECRET_TOKEN', { checkPostMethod: false }));
 
 // Принимает только метод PUT
-app.put('/validate', spmValidate('SECRET_TOKEN', { checkPostMethod: false }));
+app.put('/validate', validate('SECRET_TOKEN', { checkPostMethod: false }));
 
 // Отклоняет PUT запросы с ошибкой, другие методы не принимает
-app.put('/validate', spmValidate('SECRET_TOKEN'));
+app.put('/validate', validate('SECRET_TOKEN'));
 ```
 
 ### Только проверка

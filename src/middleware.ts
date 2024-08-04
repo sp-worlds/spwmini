@@ -8,7 +8,7 @@ interface MiddlewareOptions {
   checkPostMethod?: boolean;
 }
 
-export const spmValidate =
+export const validate =
   (token: string, options?: MiddlewareOptions) =>
   (req: Http2ServerRequest, res: Http2ServerResponse) => {
     // checkPostMethod can be undefined - true
