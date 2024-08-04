@@ -1,6 +1,6 @@
 {
   "name": "spwmini",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "SPWorlds Miniapp creation toolkit",
   "types": "dist/index.d.ts",
   "exports": {
