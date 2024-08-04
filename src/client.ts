@@ -8,7 +8,7 @@ interface AppOptions {
   customFetch?: typeof fetch;
   autoinit?: boolean;
 }
-export default class SPMini extends Emitter<MessageFromServer> {
+export default class SPWMini extends Emitter<MessageFromServer> {
   appId: string;
   isReady: boolean = false;
   user: UserData | null = null;
