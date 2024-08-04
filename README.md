@@ -149,6 +149,10 @@ spm.openPayment(payment.code);
 </tr>
 <tr>
   <td>Python</td>
+  <td><a href="https://github.com/deesiigneer/pyspapi">deesiigneer/pyspapi</a></td>
+</tr>
+<tr>
+  <td>Python</td>
   <td><a href="https://github.com/teleportx/Py-SPW">teleportx/Py-SPW</a></td>
 </tr>
 <tr>
