@@ -2,8 +2,8 @@
 
 # SPWMini
 
-![NPM Version](https://img.shields.io/npm/v/spwmini) [![NPM
-downloads](https://img.shields.io/npm/dm/spwmini)](https://www.npmjs.com/package/fastify)
+[![NPM Version](https://img.shields.io/npm/v/spwmini)](https://www.npmjs.com/package/spwmini) [![NPM
+downloads](https://img.shields.io/npm/dm/spwmini)](https://www.npmjs.com/package/spwmini)
 
 </div>
 
