@@ -91,6 +91,6 @@ export default class SPWMini extends Emitter<MessageFromServer> {
 
   openPayment(code: string) {
     if (!code) throw 'Не указан код';
-    this.#send('payment', code);
+    this.#send('openPayment', code);
   }
 }
