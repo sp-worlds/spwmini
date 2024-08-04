@@ -26,7 +26,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sp-worlds/spw-miniapp.git"
+    "url": "https://github.com/sp-worlds/spmini.git"
   },
   "keywords": [
     "SPWorlds",
@@ -45,7 +45,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sp-worlds/spw-miniapp/issues"
+    "url": "https://github.com/sp-worlds/spmini/issues"
   },
   "homepage": "https://spworlds.ru",
   "devDependencies": {
