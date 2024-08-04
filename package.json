@@ -26,17 +26,17 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sp-worlds/spmini.git"
+    "url": "https://github.com/sp-worlds/spwmini.git"
   },
   "keywords": [
     "SPWorlds",
     "SPWorlds",
     "API",
     "spworlds",
-    "sp-mini",
-    "spmini",
-    "SPMini",
-    "SPMiniapp",
+    "spw-mini",
+    "spwmini",
+    "SPWMini",
+    "SPWMiniapp",
     "SP"
   ],
   "author": {
@@ -45,7 +45,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sp-worlds/spmini/issues"
+    "url": "https://github.com/sp-worlds/spwmini/issues"
   },
   "homepage": "https://spworlds.ru",
   "devDependencies": {
