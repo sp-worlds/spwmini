@@ -198,3 +198,27 @@ app.use('/validate-user', (req, res) => {
 Все типы импортируются из `spmini/types`.
 
 «Это немного, но это честная работа».
+
+
+## Уголок безопасности
+
+Чтобы ваш сайт невозможно было использовать внутри других сайтов, кроме spworlds, нужно наприсать в `<head>` элементе:
+
+```html
+<meta http-equiv="Content-Security-Policy" content="frame-ancestors https://spworlds.ru;">
+```
+
+Благодаря одной лишь этой строчке вы легко сделаете свой сайт безопаснее.
+
+После `https://spworlds.ru` через пробел можно указать и свой сайт, если это где-то требуется для тестирования:
+
+```html
+<meta http-equiv="Content-Security-Policy" content="frame-ancestors https://spworlds.ru https://example.com;">
+```
+
+А если есть возможность модифицировать заголовки запросов, можно для фронтенда сайта указать
+
+```http
+X-Frame-Options: ALLOW-FROM https://spworlds.ru https://example.com
+```
+
