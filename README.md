@@ -11,7 +11,7 @@ downloads](https://img.shields.io/npm/dm/spwmini)](https://www.npmjs.com/package
 <tr><td align="center" width="2000"><b>
 <a href="https://spworlds.ru">SPWorlds</a> •
 <a href="https://github.com/sp-worlds/api-docs/wiki">SPWorlds API</a> •
-<a href="https://t.me/+MxmJaBA9jfZkMTFi">Telegram</a>
+<a href="https://discord.gg/HdaVZ2g6nw">Discord</a>
 </b></td></tr>
 <tr><td align="center" width="2000"><b>
 <a href="#установка">Установка</a> •
