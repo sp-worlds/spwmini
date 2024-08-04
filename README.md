@@ -124,44 +124,7 @@ const payment = await fetch('/api/buyPremium').then(r => r.json());
 spm.openPayment(payment.code);
 ```
 
-*Да, нужно на сервере самостоятельно создать транзакцию. Для этого можно воспользоваться либо [эндпоинтом API SPWorlds напрямую](https://github.com/sp-worlds/api-docs/wiki/%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D0%B0-%D0%BD%D0%B0-%D0%B2%D0%B0%D1%88%D0%B5%D0%BC-%D1%81%D0%B0%D0%B9%D1%82%D0%B5), либо одной из библиотек, созданных коммьюнити.*
-
-<details>
-
-<summary>Библиотеки с поддержкой создания транзакций</summary>
-
-<table>
-<tr>
-  <th>Язык</th>
-  <th>Репозиторий</th>
-</tr>
-<tr>
-  <td>JS/TS</td>
-  <td><a href="https://github.com/m1handr/spworlds">m1handr/spworlds</a></td>
-</tr>
-<tr>
-  <td>C#</td>
-  <td><a href="https://github.com/Mih4n/spworlds-csharp-library">Mih4n/spworlds-csharp-library</a></td>
-</tr>
-<tr>
-  <td>C#</td>
-  <td><a href="https://github.com/yawaflua/SPWorlds">yawaflua/SPWorlds</a></td>
-</tr>
-<tr>
-  <td>Python</td>
-  <td><a href="https://github.com/deesiigneer/pyspapi">deesiigneer/pyspapi</a></td>
-</tr>
-<tr>
-  <td>Python</td>
-  <td><a href="https://github.com/teleportx/Py-SPW">teleportx/Py-SPW</a></td>
-</tr>
-<tr>
-  <td>PHP</td>
-  <td><a href="https://github.com/AnvilM/SPWorlds">AnvilM/SPWorlds</a></td>
-</tr>
-</table>
-
-</details>
+*Да, нужно на сервере самостоятельно создать транзакцию. Для этого можно воспользоваться либо [эндпоинтом API SPWorlds напрямую](https://github.com/sp-worlds/api-docs/wiki/%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D0%B0-%D0%BD%D0%B0-%D0%B2%D0%B0%D1%88%D0%B5%D0%BC-%D1%81%D0%B0%D0%B9%D1%82%D0%B5), либо одной из [библиотек, созданных коммьюнити](https://github.com/sp-worlds/api-docs/wiki/Библиотеки).*
 
 <br />
 
