@@ -74,7 +74,7 @@ export default class SPWMini extends Emitter<MessageFromServer> {
   }
 
   dispose() {
-    return window.removeEventListener('message', this.#handleMessage);
+    window.removeEventListener('message', this.#handleMessage.bind(this));
   }
 
   openURL(url: string) {
