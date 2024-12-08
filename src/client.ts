@@ -1,4 +1,4 @@
-import { Emitter, EventsMap } from './emitter';
+import { Emitter } from './emitter';
 import type { UserData, EmptyRequests, PayloadRequests, MessageFromServer } from './types';
 
 type RequestUrl = Parameters<typeof fetch>[0];
