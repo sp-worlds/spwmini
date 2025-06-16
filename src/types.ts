@@ -31,8 +31,6 @@ type PlainResponses = {
 export type MessageFromServer = SuccessResponses & ErrorResponses & PlainResponses;
 
 export interface User {
-  /** @deprecated Будет удалён через некоторое время, используй `accountId` */
-  discordId: string;
   accountId: string;
   username: string;
   minecraftUUID: string;
