@@ -34,6 +34,9 @@ export interface User {
   accountId: string;
   username: string;
   minecraftUUID: string;
+  timestamp: number;
+  roles: string[];
+  isAdmin: boolean;
 }
 
 export interface UserData extends User {
